@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  app:
+    container_name: streamlit
+    build: .
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./app/main.py:/app/main.py
