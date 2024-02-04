@@ -15,7 +15,7 @@ def main():
     upload_video = st.file_uploader("Upload a video", type=["mp4"])
 
     if upload_video:
-        model = YOLO("yolov8s.pt")
+        model = YOLO("../yolov8s.pt")
         names = model.names
 
         temp_file = tempfile.NamedTemporaryFile(delete=False)
@@ -31,7 +31,7 @@ def main():
         )
 
         video_writer = cv2.VideoWriter(
-            "output.avi",
+            "../output.avi",
             cv2.VideoWriter.fourcc(*"mp4v"),
             fps,
             (w, h),
